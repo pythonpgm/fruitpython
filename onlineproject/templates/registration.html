@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+body{
+
+margin: 50px;
+text-align: center;
+align: center;
+background-color:white;
+
+}
+
+input[type=text],input[type=password],input[type=email]{
+width: 150%;
+margin: 10px 2px;
+padding: 7px 3px;
+display: inline-block;
+border:2px solid grey;
+box-sizing: border-box;
+}
+
+
+
+input[type=submit]{
+align:center;
+
+width: 50%;
+padding: 9px ;
+margin:9px ;
+cursor:pointer;
+border:2px solid black;
+background-color:white;
+margin-left: 30px;
+}
+
+
+form{
+width: 50%;
+text-align: center;
+align:center;
+margin-left: 350px;
+background-color: grey;
+font-family:Arial;font-size:14pt;
+
+}
+
+
+
+
+</style>
+</head>
+<body style="background-color:pink;background-image:url('/static/images/pic.jpg');"style='width:20px;height:200px;' >
+
+<h2 align= "center"> Registration Form</h2>
+
+<form action="register" method="post">
+    {% csrf_token %}
+     <table align="center">
+         <tr>
+             <td>UserName</td>
+             <td><input type="text" name="username" placeholder="Enter your username"><br></td>
+         </tr>
+
+         <tr>
+              <td>Password</td>
+              <td><input type="password" name="password" placeholder="Enter your password"><br></td>
+         </tr>
+
+         <tr>
+              <td>Confirm password</td>
+              <td><input type="password" name="password1" placeholder="Confirm your password"><br></td>
+         </tr>
+
+         <tr>
+              <td colspan="2" style=align:"center";padding:50px;><a href="{% url 'onlineapp:login' %}">submit</a><br></td>
+         </tr>
+    </table>
+</form>
+
+{% for msg in messages %}
+<h1>{{msg}}</h1>
+{% endfor %}
+</body>
+</html>

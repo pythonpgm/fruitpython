@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block body %}
+<head>
+    <style>
+        .btn {
+        width: 80%;
+        margin: 0 auto;
+        padding: 15px 20px;
+        font-size: 17px;
+        color: #fff;
+        border-radius: 30px;
+        background: #428cb5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial;
+        cursor: pointer;
+        transition: .2s;
+        position: absolute;
+        bottom: 0px;
+    }
+    </style>
+</head>
+
+
+<div class="container">
+    <div class="row">
+        {% for i in fruit_list %}
+      <div class="col-md-3">
+            <div class="card" style="height: 750px;">
+  <img class="card-img-top" src="{{i.img.url}}" alt=""  width=200 height=250>
+  <div class="card-body" style="height:300px;">
+    <h5 class="card-title">{{i.name}}</h5>
+    <p class="card-text">{{i.desc}}</p>
+
+  </div>
+</div>
+      </div>
+         {% endfor %}
+    </div>
+</div>
+ {% endblock %}
